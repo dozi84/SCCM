@@ -1,4 +1,4 @@
-# Verbindung zum Tasksequenz-Objekt herstelltn
+# Verbindung zum Tasksequenz-Objekt herstellen
 $tsenv = New-Object -COMObject Microsoft.SMS.TSEnvironment
 
 # TS-Variablen an PS-Script übergeben
@@ -38,4 +38,4 @@ Start-OSDCloud -ZTI -OSVersion $OSName -OSBuild $OSBuild -OSEdition $OSEdition -
 
 #Write-Output ""
 #Write-Output "--------------------------------------"
-#get-process -name cmtrace | stop-process
+#Get-Process -Name cmtrace | Stop-Process
