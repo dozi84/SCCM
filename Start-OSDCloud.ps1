@@ -31,11 +31,7 @@ $Global:MyOSDCloud = [ordered]@{
 # Launch OSDCloud
 #Write-Output "Launching OSDCloud"
 #Write-Output ""
-# TsProgress ausblenden
-#(New-object -ComObject Microsoft.SMS.TsProgressUI).CloseProgressDialog()
-#Invoke-Expression 'cmd.exe /c start /wait %SYSTEMROOT%\System32\WindowsPowershell\v1.0\powershell.exe -ep bypass -command { Start-OSDCloud -ZTI -OSVersion "Windows 11" -OSBuild "23H2" -OSEdition "Enterprise" -OSLanguage "de-de" -Firmware ; Read-Host }'
 Start-OSDCloud -ZTI -OSVersion $OSName -OSBuild $OSBuild -OSEdition $OSEdition -OSLanguage $OSLanguage -Firmware
-
 #Write-Output ""
 #Write-Output "--------------------------------------"
 #Get-Process -Name cmtrace | Stop-Process
