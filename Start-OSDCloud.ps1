@@ -12,13 +12,13 @@ $OSLanguage = $tsenv.Value('ZT_OS_LANG')
 
 #Write-Output "--------------------------------------"
 #Write-Output ""
-#Write-Output "OSDCloud Apply OS Step"
-#Write-Output ""
-#Write-Output $OSName
-#Write-Output $OSBuild 
-#Write-Output $OSEdition
-#Write-Output $OSLanguage
-#Write-Output ""
+Write-Output "OSDCloud Apply OS Step"
+Write-Output ""
+Write-Output $OSName
+Write-Output $OSBuild 
+Write-Output $OSEdition
+Write-Output $OSLanguage
+Write-Output ""
 
 # Festplatte-Partition und Formatierung überspringen, wird von der TS selbst erledigt
 $Global:MyOSDCloud = [ordered]@{
