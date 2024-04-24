@@ -16,12 +16,14 @@ Import-Module RemoteDesktop
 
 Get-RDCertificate -ConnectionBroker PRIMUSS-TS-VW.rz.fh-ingolstadt.de | select role, Thumbprint
 
-New-RDRemoteApp -ConnectionBroker PRIMUSS-TS-VW.rz.fh-ingolstadt.de -CollectionName "PRIMUSS" -DisplayName "PMenu" -FilePath "C:\Remote\prStart.exe" -IconPath "\\vw-fs\primuss\Primuss\PMenu.exe"
+New-RDRemoteApp -ConnectionBroker PRIMUSS-TS-VW.rz.fh-ingolstadt.de -CollectionName "PRIMUSS" -DisplayName "PMenu Y" -FilePath "Y:\Primuss\PMenu.exe" -IconPath "Y:\Primuss\PMenu.exe"
 
 Get-RDRemoteApp -ConnectionBroker PRIMUSS-TS-VW.rz.fh-ingolstadt.de
 
-Get-RDRemoteApp -ConnectionBroker vw-ts-primuss.rz.fh-ingolstadt.de
+Get-RDRemoteApp -ConnectionBroker PRIMUSS-TS.rz.fh-ingolstadt.de
 
-Set-RDRemoteApp -ConnectionBroker PRIMUSS-TS-VW.rz.fh-ingolstadt.de -Alias prStart -DisplayName "PMenu Lokal"
+Set-RDRemoteApp -ConnectionBroker PRIMUSS-TS-VW.rz.fh-ingolstadt.de -CollectionName "PRIMUSS" -Alias prStart -DisplayName "PMenu Lokal"
+
+Remove-RDRemoteApp -ConnectionBroker PRIMUSS-TS-VW.rz.fh-ingolstadt.de -CollectionName "PRIMUSS" -Alias prStart
 
 Exit-PSSession
