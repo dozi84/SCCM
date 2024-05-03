@@ -27,8 +27,6 @@ Foreach ($item in $ProfileList) {
     "{0}" -f $($item.Username) | Write-Output
     Get-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | 
         Foreach {"{0} {1}" -f "   Program:", $($_.DisplayName) | Write-Output}
-    Get-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | 
-        Foreach {"{0} {1}" -f "   Program:", $($_.DisplayName) | Write-Output}
     
     #####################################################################
  
