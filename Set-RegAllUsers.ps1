@@ -26,11 +26,11 @@ Foreach ($item in $ProfileList) {
     # Display Username
     "{0}" -f $($item.Username) | Write-Output
     # Set Value "PriD3Sync" at "Run" key
-    New-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name PriD3Sync -Value "\\vw-fs\primuss\Primuss\Programme\DLL4\PriD3Sync_2.exe" -PropertyType String -ErrorAction SilentlyContinue | Write-Output
+    New-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name PriD3Sync -Value "\\vw-fs\primuss\Primuss\Programme\DLL4\PriD3Sync_2.exe" -PropertyType String -ErrorAction SilentlyContinue
     # Delete the OneDrive Value
-    Remove-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name OneDrive -ErrorAction SilentlyContinue | Write-Output
+    Remove-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name OneDrive -ErrorAction SilentlyContinue
     # Delte Wrong PriD3Sync Value
-    Remove-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name PriD3Sync_2 -ErrorAction SilentlyContinue | Write-Output
+    Remove-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name PriD3Sync_2 -ErrorAction SilentlyContinue
 
     #####################################################################
  
