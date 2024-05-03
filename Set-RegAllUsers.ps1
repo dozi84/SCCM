@@ -22,12 +22,12 @@ Foreach ($item in $ProfileList) {
  
     #####################################################################
     # This is where you can read/modify a users portion of the registry 
- 
-    # This example lists the Uninstall keys for each user registry hive
+    # Display Username
     "{0}" -f $($item.Username) | Write-Output
+    # Set Value "PriD3Sync" at "Run" key
     New-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name PriD3Sync -Value "\\vw-fs\primuss\Primuss\Programme\DLL4\PriD3Sync_2.exe" -PropertyType String
-    Get-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\* | 
-        Foreach {"{0} {1}" -f "   Program:", $($_.DisplayName) | Write-Output}
+    # Delete the OneDrive Value
+    Remove-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name OneDrive
     
     #####################################################################
  
