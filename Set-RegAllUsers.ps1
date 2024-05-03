@@ -28,6 +28,9 @@ Foreach ($item in $ProfileList) {
     New-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name PriD3Sync -Value "\\vw-fs\primuss\Primuss\Programme\DLL4\PriD3Sync_2.exe" -PropertyType String
     # Delete the OneDrive Value
     Remove-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name OneDrive
+    # Delte Wrong PriD3Sync Value
+    Remove-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name PriD3Sync_2
+    
     
     #####################################################################
  
