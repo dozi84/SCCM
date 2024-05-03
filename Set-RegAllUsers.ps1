@@ -21,7 +21,8 @@ Foreach ($item in $ProfileList) {
     }
  
     #####################################################################
-    # This is where you can read/modify a users portion of the registry 
+    # This is where you can read/modify a users portion of the registry
+    
     # Display Username
     "{0}" -f $($item.Username) | Write-Output
     # Set Value "PriD3Sync" at "Run" key
@@ -30,8 +31,7 @@ Foreach ($item in $ProfileList) {
     Remove-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name OneDrive
     # Delte Wrong PriD3Sync Value
     Remove-ItemProperty registry::HKEY_USERS\$($Item.SID)\Software\Microsoft\Windows\CurrentVersion\Run\ -Name PriD3Sync_2
-    
-    
+        
     #####################################################################
  
     # Unload ntuser.dat        
